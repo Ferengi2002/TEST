@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos | Secure Legacy App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestión de Productos Segura</h1>
+
+            <!-- Panel superior de usuario (Oculto hasta hacer login) -->
+            <div id="user-info" class="hidden">
+                <span id="welcome-text">Bienvenido</span>
+                <button id="btn-logout" class="btn btn-danger btn-sm">Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <!-- ======================= -->
+        <!-- PANTALLA DE LOGIN/REGISTRO -->
+        <!-- ======================= -->
+        <section id="auth-section" class="card">
+            <h2 class="text-center">Acceso al Sistema</h2>
+            <div class="auth-forms">
+                <!-- Formulario Login -->
+                <form id="login-form">
+                    <h3>Iniciar Sesión</h3>
+                    <div class="form-group">
+                        <label for="login-user">Usuario</label>
+                        <input type="text" id="login-user" required placeholder="Tu usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-pass">Contraseña</label>
+                        <input type="password" id="login-pass" required placeholder="Tu contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </form>
+
+                <div class="divider">Ó</div>
+
+                <!-- Formulario Registro -->
+                <form id="register-form">
+                    <h3>Crear Cuenta Nueva</h3>
+                    <div class="form-group">
+                        <label for="reg-user">Usuario</label>
+                        <input type="text" id="reg-user" required placeholder="Nuevo usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-pass">Contraseña</label>
+                        <input type="password" id="reg-pass" required placeholder="Nueva contraseña">
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Registrarse</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ======================= -->
+        <!-- PANTALLA PRINCIPAL (Oculta hasta el login) -->
+        <!-- ======================= -->
+        <div id="app-content" class="hidden">
+            <section class="card form-section">
+                <h2>Añadir Nuevo Producto</h2>
+                <form id="product-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre del Producto</label>
+                            <input type="text" id="nombre" required placeholder="Ej. Monitor 24''">
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio ($)</label>
+                            <input type="number" id="precio" step="0.01" min="0" required placeholder="Ej. 199.99">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoría</label>
+                        <input type="text" id="categoria" required placeholder="Ej. Electrónica">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                </form>
+            </section>
+
+            <section class="card table-section">
+                <h2>Inventario en Base de Datos</h2>
+                <div class="table-responsive">
+                    <table id="products-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Categoría</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Los productos se pintarán aquí vía Vanilla JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

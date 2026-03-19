@@ -1,0 +1,15 @@
+{
+    "name": "fullstack-legacy-secure",
+    "version": "1.0.0",
+    "description": "Aplicación Full-Stack Legacy (Asegurada con JWT)",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.22.1",
+        "sqlite3": "^5.1.7",
+        "bcryptjs": "^2.4.3",
+        "jsonwebtoken": "^9.0.2"
+    }
+}
